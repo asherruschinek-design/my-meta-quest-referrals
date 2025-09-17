@@ -1,141 +1,58 @@
-/* Reset + base */
-body, html {
-  margin: 0;
-  padding: 0;
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  height: 100%;
-  color: #fff;
-  overflow-x: hidden;
-  background: #001f3f;
-}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>My Meta Quest Referrals</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="https://kit.fontawesome.com/a2e0f1f0d2.js" crossorigin="anonymous"></script>
+</head>
+<body>
+  <!-- Background -->
+  <div class="animated-background">
+    <svg viewBox="0 0 1440 800" preserveAspectRatio="none">
+      <path class="wave wave1" d="M0,400 C480,300 960,500 1440,400 L1440,800 L0,800 Z" fill="rgba(0,179,255,0.3)"/>
+      <path class="wave wave2" d="M0,400 C480,500 960,300 1440,400 L1440,800 L0,800 Z" fill="rgba(0,255,234,0.2)"/>
+      <path class="wave wave3" d="M0,400 C480,350 960,450 1440,400 L1440,800 L0,800 Z" fill="rgba(0,179,255,0.15)"/>
+    </svg>
+  </div>
 
-/* --- Animated Background --- */
-.animated-background {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  z-index: -1;
-  overflow: hidden;
-}
+  <!-- Hamburger -->
+  <div class="hamburger" onclick="document.querySelector('nav').classList.toggle('show')">
+    <i class="fa-solid fa-bars"></i>
+  </div>
 
-.animated-background svg {
-  width: 100%;
-  height: 100%;
-}
+  <!-- Sidebar Navigation -->
+  <nav>
+    <h2>Menu</h2>
+    <a href="index.html"><i class="fa-solid fa-house"></i> Home</a>
+    <a href="how-to-redeem.html"><i class="fa-solid fa-ticket"></i> How to Redeem</a>
+    <a href="gains.html"><i class="fa-solid fa-hand-holding-dollar"></i> What We Gain</a>
+    <a href="socials.html"><i class="fa-solid fa-users"></i> My Socials</a>
+    <a href="links.html"><i class="fa-solid fa-link"></i> Referrals</a>
+  </nav>
 
-.wave {
-  animation: waveAnimation 12s ease-in-out infinite;
-}
+  <!-- Main Content -->
+  <main>
+    <section>
+      <h1>My Meta Quest Referrals</h1>
+      <p>
+        Welcome! Here’s a collection of my referral codes to get <strong>15% off</strong> 
+        on apps and games from the Meta Quest Store.<br>
+        Click the links below to claim your rewards!
+      </p>
+    </section>
 
-.wave1 { animation-delay: 0s; }
-.wave2 { animation-delay: 4s; }
-.wave3 { animation-delay: 8s; }
-
-@keyframes waveAnimation {
-  0% { transform: translateX(0) translateY(0) scaleY(1); }
-  50% { transform: translateX(-60px) translateY(20px) scaleY(1.05); }
-  100% { transform: translateX(0) translateY(0) scaleY(1); }
-}
-
-/* --- Hamburger Menu --- */
-.hamburger {
-  position: fixed;
-  top: 15px;
-  left: 15px;
-  font-size: 2rem;
-  cursor: pointer;
-  z-index: 100;
-  color: #00ffea;
-}
-
-/* --- Sidebar Navigation --- */
-nav {
-  width: 220px;
-  background: rgba(0, 0, 0, 0.55);
-  position: fixed;
-  height: 100vh;
-  padding: 2rem 1rem;
-  display: flex;
-  flex-direction: column;
-  transform: translateX(-100%);
-  transition: transform 0.3s ease;
-  z-index: 90;
-  backdrop-filter: blur(8px);
-}
-
-nav.show {
-  transform: translateX(0);
-}
-
-nav h2 {
-  font-size: 1.5rem;
-  margin-bottom: 2rem;
-  text-align: center;
-  color: #00ffea;
-}
-
-nav a {
-  color: #00ffea;
-  text-decoration: none;
-  margin: 0.5rem 0;
-  padding: 0.7rem;
-  border-radius: 8px;
-  display: flex;
-  align-items: center;
-  gap: 0.6rem;
-  transition: 0.3s;
-  font-weight: bold;
-}
-
-nav a:hover {
-  background: rgba(0, 255, 234, 0.2);
-  transform: translateX(6px);
-}
-
-/* --- Main Content --- */
-main {
-  padding: 4rem 2rem 2rem 2rem;
-  max-width: 900px;
-  margin: 0 auto;
-  position: relative;
-  z-index: 1;
-}
-
-section {
-  margin-bottom: 2.5rem;
-  background: rgba(0, 0, 0, 0.35);
-  padding: 1.5rem;
-  border-radius: 14px;
-  backdrop-filter: blur(6px);
-  box-shadow: 0 8px 20px rgba(0,0,0,0.4);
-}
-
-h1, h2 {
-  text-shadow: 1px 2px 6px rgba(0,0,0,0.7);
-}
-
-/* --- Referral Links --- */
-.links a {
-  display: block;
-  margin: 0.7rem 0;
-  padding: 0.8rem 1.2rem;
-  border: 2px solid #00ffea;
-  border-radius: 8px;
-  color: #00ffea;
-  text-decoration: none;
-  font-weight: bold;
-  transition: 0.3s;
-}
-
-.links a:hover {
-  background: #00ffea;
-  color: #001f3f;
-  transform: scale(1.05);
-}
-
-/* --- Responsive --- */
-@media (max-width: 768px) {
-  nav { width: 70%; }
-}
+    <section class="links">
+      <h2>Referral Links</h2>
+      <a href="https://www.meta.com/appreferrals/ash.ruscho/3395626290543887" target="_blank">🎮 Thief Simulator</a>
+      <a href="https://www.meta.com/appreferrals/ash.ruscho/339562629054388" target="_blank">💃 Just Dance</a>
+      <a href="https://www.meta.com/appreferrals/ash.ruscho/3551691271620960" target="_blank">🦇 Batman Arkham Shadow</a>
+      <a href="https://www.meta.com/appreferrals/ash.ruscho/5017327094985781" target="_blank">🤖 Iron Man VR</a>
+      <a href="https://www.meta.com/appreferrals/ash.ruscho/4917905281646450" target="_blank">🐱 I Am Cat</a>
+      <a href="https://www.meta.com/appreferrals/ash.ruscho/4917905281646450" target="_blank">🥝 Fruit Ninja 2</a>
+      <a href="https://www.meta.com/appreferrals/ash.ruscho/7865834933488042" target="_blank">⚔️ War of Wizards</a>
+    </section>
+  </main>
+</body>
+</html>
