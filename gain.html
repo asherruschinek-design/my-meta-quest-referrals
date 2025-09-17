@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Gains</title>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+<link rel="stylesheet" href="style.css">
+<style>
+  .gains-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2rem;
+    justify-content: center;
+    margin-top: 2rem;
+  }
+
+  .gain-card {
+    background: rgba(0,0,0,0.3);
+    padding: 2rem;
+    border-radius: 12px;
+    flex: 1 1 300px;
+    max-width: 400px;
+    text-align: center;
+    transition: transform 0.3s, background 0.3s;
+  }
+
+  .gain-card:hover {
+    transform: translateY(-10px);
+    background: rgba(0,0,0,0.5);
+  }
+
+  .gain-card h2 {
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+    color: #00ffea;
+  }
+
+  .gain-card p {
+    font-size: 1.2rem;
+    line-height: 1.5;
+  }
+</style>
+</head>
+<body>
+<i class="fas fa-bars hamburger" id="hamburger"></i>
+
+<nav id="sidebar">
+  <h2>Menu</h2>
+  <a href="index.html"><i class="fa-solid fa-house"></i>Home</a>
+  <a href="socials.html"><i class="fa-solid fa-user"></i>My Socials</a>
+  <a href="redeem.html"><i class="fa-solid fa-gift"></i>How to Redeem</a>
+  <a href="links.html"><i class="fa-solid fa-link"></i>Referral Links</a>
+  <a href="gains.html"><i class="fa-solid fa-thumbs-up"></i>Gains</a>
+</nav>
+
+<main>
+  <section>
+    <h1>Referral Gains</h1>
+    <div class="gains-container">
+      <div class="gain-card">
+        <h2>What You Gain</h2>
+        <p>15% discount on apps and games when using my referral codes!</p>
+      </div>
+      <div class="gain-card">
+        <h2>What I Gain</h2>
+        <p>$3 per referral when you claim a code. Thank you for supporting me!</p>
+      </div>
+    </div>
+  </section>
+</main>
+
+<script src="script.js"></script>
+</body>
+</html>
