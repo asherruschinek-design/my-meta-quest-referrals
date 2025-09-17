@@ -1,148 +1,91 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>What We Gain</title>
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
-<link rel="stylesheet" href="style.css">
-<style>
-  body, html {
-    margin: 0;
-    padding: 0;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    background: #0072ce; /* Meta Quest blue */
-    color: #fff;
-  }
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>What We Gain</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="https://kit.fontawesome.com/yourkit.js" crossorigin="anonymous"></script>
+  <style>
+    /* Gains page styling */
+    .gains {
+      list-style: none;
+      padding: 0;
+      margin-top: 1rem;
+    }
 
-  .hamburger {
-    position: fixed;
-    top: 15px;
-    left: 15px;
-    font-size: 2rem;
-    cursor: pointer;
-    z-index: 100;
-  }
+    .gains li {
+      margin: 1rem 0;
+    }
 
-  nav {
-    width: 220px;
-    background: rgba(0,0,0,0.4);
-    position: fixed;
-    height: 100vh;
-    padding: 2rem 1rem;
-    display: flex;
-    flex-direction: column;
-    transform: translateX(-100%);
-    transition: transform 0.3s ease;
-    z-index: 90;
-  }
+    .gains p {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      font-size: 1.2rem;
+      padding: 0.8rem 1rem;
+      border: 2px solid #00ffea;
+      border-radius: 10px;
+      background: rgba(0,0,0,0.2);
+      transition: all 0.3s ease;
+    }
 
-  nav.show { transform: translateX(0); }
+    .gains p:hover {
+      background: #00ffea;
+      color: #001f3f;
+      transform: scale(1.05);
+    }
 
-  nav h2 { font-size: 1.5rem; margin-bottom: 2rem; text-align: center; }
-
-  nav a {
-    color: #00ffea;
-    text-decoration: none;
-    margin: 0.5rem 0;
-    padding: 0.5rem;
-    border-radius: 6px;
-    display: flex;
-    align-items: center;
-    gap: 0.5rem;
-    transition: 0.3s;
-  }
-
-  nav a:hover { background: rgba(255,255,255,0.2); transform: translateX(5px); }
-
-  main { padding: 4rem 2rem 2rem 2rem; max-width: 900px; margin: 0 auto; }
-
-  h1, h2 { text-shadow: 1px 1px 4px rgba(0,0,0,0.5); }
-
-  .gains-container {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 2rem;
-    justify-content: center;
-    margin-top: 2rem;
-  }
-
-  .gain-card {
-    background: rgba(0,0,0,0.3);
-    padding: 2rem;
-    border-radius: 12px;
-    flex: 1 1 300px;
-    max-width: 400px;
-    text-align: center;
-    transition: transform 0.3s, background 0.3s;
-  }
-
-  .gain-card:hover {
-    transform: translateY(-10px);
-    background: rgba(0,0,0,0.5);
-  }
-
-  .gain-card h2 { font-size: 1.5rem; margin-bottom: 1rem; color: #00ffea; }
-
-  .gain-card p { font-size: 1.2rem; line-height: 1.5; }
-
-  @media (max-width: 768px) { nav { width: 70%; } }
-
-  body::before {
-    content: "";
-    position: fixed;
-    top: -50%;
-    left: -50%;
-    width: 200%;
-    height: 200%;
-    background: linear-gradient(120deg, #0072ce, #00bfff, #1e5ed1);
-    animation: wave 20s linear infinite;
-    z-index: -1;
-  }
-
-  @keyframes wave {
-    0% { transform: rotate(0deg); }
-    50% { transform: rotate(3deg); }
-    100% { transform: rotate(0deg); }
-  }
-</style>
+    .gains i {
+      font-size: 1.5rem;
+    }
+  </style>
 </head>
 <body>
+  <!-- Hamburger Menu -->
+  <div class="hamburger">&#9776;</div>
 
-<i class="fas fa-bars hamburger" id="hamburger"></i>
+  <!-- Sidebar Navigation -->
+  <nav>
+    <h2>Menu</h2>
+    <a href="index.html"><i class="fa-solid fa-house"></i> Home</a>
+    <a href="gains.html" class="active"><i class="fa-solid fa-hand-holding-dollar"></i> What We Gain</a>
+    <a href="socials.html"><i class="fa-solid fa-user-group"></i> My Socials</a>
+    <a href="contact.html"><i class="fa-solid fa-envelope"></i> Contact</a>
+  </nav>
 
-<nav id="sidebar">
-  <h2>Menu</h2>
-  <a href="index.html"><i class="fa-solid fa-house"></i>Home</a>
-  <a href="socials.html"><i class="fa-solid fa-user"></i>My Socials</a>
-  <a href="redeem.html"><i class="fa-solid fa-gift"></i>How to Redeem</a>
-  <a href="links.html"><i class="fa-solid fa-link"></i>Referral Links</a>
-  <a href="gains.html"><i class="fa-solid fa-hand-holding-dollar"></i>What We Gain</a>
-</nav>
+  <!-- Animated Background -->
+  <div class="animated-background">
+    <svg viewBox="0 0 1440 800" preserveAspectRatio="none">
+      <path class="wave wave1" d="M0,400 C480,300 960,500 1440,400 L1440,800 L0,800 Z" fill="rgba(0,179,255,0.3)"/>
+      <path class="wave wave2" d="M0,400 C480,500 960,300 1440,400 L1440,800 L0,800 Z" fill="rgba(0,255,234,0.2)"/>
+      <path class="wave wave3" d="M0,400 C480,350 960,450 1440,400 L1440,800 L0,800 Z" fill="rgba(0,179,255,0.1)"/>
+    </svg>
+  </div>
 
-<main>
-  <section>
-    <h1>What We Gain</h1>
-    <div class="gains-container">
-      <div class="gain-card">
-        <h2>What You Gain</h2>
-        <p>15% discount on any app or game you purchase using my referral codes.</p>
-      </div>
-      <div class="gain-card">
-        <h2>What I Gain</h2>
-        <p>$3 for every successful referral. Thank you for supporting me!</p>
-      </div>
-    </div>
-  </section>
-</main>
+  <!-- Main Content -->
+  <main>
+    <section>
+      <h1>What We Gain</h1>
+      <p>Here’s what both of us get when you use my referral codes:</p>
+      <ul class="gains">
+        <li>
+          <p><i class="fa-solid fa-user-check"></i> You: 15% discount on your app or game</p>
+        </li>
+        <li>
+          <p><i class="fa-solid fa-money-bill-wave"></i> Me: $3 reward per referral</p>
+        </li>
+      </ul>
+    </section>
+  </main>
 
-<script>
-  const hamburger = document.getElementById('hamburger');
-  const sidebar = document.getElementById('sidebar');
-  hamburger.addEventListener('click', () => {
-    sidebar.classList.toggle('show');
-  });
-</script>
-
+  <!-- Hamburger Script -->
+  <script>
+    const hamburger = document.querySelector('.hamburger');
+    const nav = document.querySelector('nav');
+    hamburger.addEventListener('click', () => {
+      nav.classList.toggle('show');
+    });
+  </script>
 </body>
 </html>
