@@ -3,226 +3,30 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>My Meta Quest Referrals</title>
+<title>My Meta Quest Referrals - Home</title>
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
-<style>
-  html, body {
-    margin: 0;
-    padding: 0;
-    overflow: hidden;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    height: 100%;
-    color: #fff;
-  }
-
-  canvas {
-    position: fixed;
-    top: 0;
-    left: 0;
-    z-index: -1;
-  }
-
-  nav {
-    width: 220px;
-    background: rgba(0,0,0,0.4);
-    display: flex;
-    flex-direction: column;
-    padding: 2rem 1rem;
-    position: fixed;
-    height: 100vh;
-    box-shadow: 3px 0 10px rgba(0,0,0,0.3);
-    z-index: 10;
-  }
-
-  nav h2 { font-size: 1.5rem; margin-bottom: 2rem; text-align: center; }
-
-  nav a {
-    color: #00ffea;
-    text-decoration: none;
-    margin: 0.5rem 0;
-    padding: 0.5rem;
-    border-radius: 6px;
-    transition: 0.3s;
-    display: flex;
-    align-items: center;
-    gap: 0.5rem;
-  }
-
-  nav a:hover { background: rgba(255,255,255,0.2); transform: translateX(5px); }
-
-  main { margin-left: 240px; padding: 2rem; max-width: 900px; z-index: 5; position: relative; }
-
-  section { margin-bottom: 3rem; }
-
-  h1, h2 { text-shadow: 1px 1px 6px rgba(0,0,0,0.7); }
-
-  .links a {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    margin: 0.5rem 0;
-    padding: 0.7rem 1rem;
-    border: 2px solid #00ffea;
-    border-radius: 8px;
-    color: #00ffea;
-    text-decoration: none;
-    font-weight: bold;
-    transition: 0.3s;
-  }
-
-  .links a:hover { background: #00ffea; color: #0a3d91; transform: scale(1.05); }
-
-  .social-icons a {
-    margin-right: 1rem;
-    font-size: 1.5rem;
-    color: #00ffea;
-    transition: transform 0.3s;
-  }
-
-  .social-icons a:hover { color: #fff; transform: rotate(15deg) scale(1.2); }
-
-  .redeem, .you-gain, .i-gain {
-    background: rgba(255,255,255,0.1);
-    padding: 1rem;
-    border-radius: 12px;
-    line-height: 1.5;
-    transition: transform 0.3s, background 0.3s;
-  }
-
-  .redeem:hover, .you-gain:hover, .i-gain:hover {
-    transform: translateY(-5px);
-    background: rgba(255,255,255,0.2);
-  }
-
-  @media (max-width: 768px) {
-    nav {
-      width: 100%;
-      height: auto;
-      flex-direction: row;
-      overflow-x: auto;
-      padding: 1rem;
-    }
-    nav h2 { display: none; }
-    nav a { margin: 0 0.5rem; }
-    main { margin-left: 0; padding: 1rem; }
-  }
-</style>
+<link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-<nav>
+<i class="fas fa-bars hamburger" id="hamburger"></i>
+
+<nav id="sidebar">
   <h2>Menu</h2>
-  <a href="#socials"><i class="fa-solid fa-user"></i>My Socials</a>
-  <a href="#redeem"><i class="fa-solid fa-gift"></i>How to Redeem</a>
-  <a href="#you-gain"><i class="fa-solid fa-thumbs-up"></i>What You Gain</a>
-  <a href="#i-gain"><i class="fa-solid fa-handshake"></i>What I Gain</a>
-  <a href="#links"><i class="fa-solid fa-link"></i>Referral Links</a>
+  <a href="socials.html"><i class="fa-solid fa-user"></i>My Socials</a>
+  <a href="redeem.html"><i class="fa-solid fa-gift"></i>How to Redeem</a>
+  <a href="you-gain.html"><i class="fa-solid fa-thumbs-up"></i>What You Gain</a>
+  <a href="i-gain.html"><i class="fa-solid fa-handshake"></i>What I Gain</a>
+  <a href="links.html"><i class="fa-solid fa-link"></i>Referral Links</a>
 </nav>
 
 <main>
-  <section id="intro">
-    <h1>My Meta Quest Referrals</h1>
-    <p>Welcome! Here’s a collection of my referral codes to get <strong>15% discount</strong> on apps and games on the Meta Quest Store. Click the links to claim your rewards!</p>
-  </section>
-
-  <section id="socials">
-    <h2>My Socials</h2>
-    <div class="social-icons">
-      <a href="https://twitter.com/" target="_blank"><i class="fab fa-twitter"></i></a>
-      <a href="https://instagram.com/" target="_blank"><i class="fab fa-instagram"></i></a>
-      <a href="https://youtube.com/" target="_blank"><i class="fab fa-youtube"></i></a>
-    </div>
-  </section>
-
-  <section id="redeem" class="redeem">
-    <h2>How to Redeem</h2>
-    <ol>
-      <li>Click the “Claim” button next to the app/game you want.</li>
-      <li>Log in to your Meta Quest account if prompted.</li>
-      <li>Follow the instructions to apply the referral code.</li>
-      <li>Enjoy your 15% discount!</li>
-    </ol>
-  </section>
-
-  <section id="you-gain" class="you-gain">
-    <h2>What You Gain</h2>
-    <ul>
-      <li>15% discount on apps and games.</li>
-      <li>Access to new VR experiences at a lower price.</li>
-      <li>Support me while enjoying your VR adventures.</li>
-    </ul>
-  </section>
-
-  <section id="i-gain" class="i-gain">
-    <h2>What I Gain</h2>
-    <ul>
-      <li>Rewards from Meta Quest for sharing referral codes.</li>
-      <li>Motivation to continue sharing VR content and codes.</li>
-      <li>Community engagement with VR fans.</li>
-    </ul>
-  </section>
-
-  <section id="links">
-    <h2>Referral Links</h2>
-    <div class="links">
-      <a href="https://www.meta.com/appreferrals/ash.ruscho/3395626290543887?utm_source=oculus&utm_location=2&utm_parent=frl&utm_medium=app_referral&utm_content=copy" target="_blank">Thief Simulator</a>
-      <a href="https://www.meta.com/appreferrals/ash.ruscho/3395626290543887?utm_source=oculus&utm_location=2&utm_parent=frl&utm_medium=app_referral&utm_content=copy" target="_blank">Just Dance</a>
-      <a href="https://www.meta.com/appreferrals/ash.ruscho/3551691271620960?utm_source=oculus&utm_location=2&utm_parent=frl&utm_medium=app_referral&utm_content=copy" target="_blank">Batman Arkham Shadow</a>
-      <a href="https://www.meta.com/appreferrals/ash.ruscho/5017327094985781?utm_source=oculus&utm_location=2&utm_parent=frl&utm_medium=app_referral&utm_content=copy" target="_blank">Iron Man</a>
-      <a href="https://www.meta.com/appreferrals/ash.ruscho/4917905281646450?utm_source=oculus&utm_location=2&utm_parent=frl&utm_medium=app_referral&utm_content=copy" target="_blank">I Am Cat</a>
-      <a href="https://www.meta.com/appreferrals/ash.ruscho/4917905281646450?utm_source=oculus&utm_location=2&utm_parent=frl&utm_medium=app_referral&utm_content=copy" target="_blank">Fruit Ninja 2</a>
-      <a href="https://www.meta.com/appreferrals/ash.ruscho/7865834933488042?utm_source=oculus&utm_location=2&utm_parent=frl&utm_medium=app_referral&utm_content=copy" target="_blank">War of Wizards</a>
-    </div>
+  <section>
+    <h1>Welcome to My Meta Quest Referrals</h1>
+    <p>Here’s a collection of my referral codes to get <strong>15% discount</strong> on apps and games on the Meta Quest Store. Use the hamburger menu (☰) to navigate to different pages.</p>
   </section>
 </main>
 
-<!-- Three.js CDN -->
-<script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r158/three.min.js"></script>
-<script>
-  // Three.js scene
-  let scene = new THREE.Scene();
-  let camera = new THREE.PerspectiveCamera(75, window.innerWidth/window.innerHeight, 0.1, 1000);
-  let renderer = new THREE.WebGLRenderer({antialias:true});
-  renderer.setSize(window.innerWidth, window.innerHeight);
-  document.body.appendChild(renderer.domElement);
-
-  // Plane geometry for waves
-  let geometry = new THREE.PlaneGeometry(200, 200, 100, 100);
-  let material = new THREE.MeshPhongMaterial({color: 0x00bfff, side: THREE.DoubleSide, wireframe: true, opacity:0.3, transparent:true});
-  let plane = new THREE.Mesh(geometry, material);
-  plane.rotation.x = -Math.PI/2;
-  scene.add(plane);
-
-  // Lights
-  let light = new THREE.DirectionalLight(0xffffff, 1);
-  light.position.set(50, 50, 50);
-  scene.add(light);
-  let ambient = new THREE.AmbientLight(0xffffff, 0.5);
-  scene.add(ambient);
-
-  camera.position.set(0, 50, 100);
-  camera.lookAt(0,0,0);
-
-  // Animate waves
-  let clock = new THREE.Clock();
-  function animate() {
-    requestAnimationFrame(animate);
-    let time = clock.getElapsedTime();
-    for (let i=0; i<geometry.vertices.length; i++) {
-      let v = geometry.vertices[i];
-      v.z = Math.sin((v.x + time*5)/5) * 2 + Math.cos((v.y + time*5)/5) * 2;
-    }
-    geometry.verticesNeedUpdate = true;
-    renderer.render(scene, camera);
-  }
-  animate();
-
-  // Resize
-  window.addEventListener('resize', () => {
-    camera.aspect = window.innerWidth/window.innerHeight;
-    camera.updateProjectionMatrix();
-    renderer.setSize(window.innerWidth, window.innerHeight);
-  });
-</script>
+<script src="script.js"></script>
 </body>
 </html>
