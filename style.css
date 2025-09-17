@@ -3,11 +3,11 @@ body, html {
   margin: 0;
   padding: 0;
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  background: #0072ce; /* fallback color */
   color: #fff;
   height: 100%;
   overflow-x: hidden;
   position: relative;
+  background: #0072ce; /* fallback color */
 }
 
 /* Animated 3D Wavy Background */
@@ -28,7 +28,6 @@ body, html {
 .wave {
   animation: waveAnimation 12s ease-in-out infinite;
 }
-
 .wave1 { animation-delay: 0s; }
 .wave2 { animation-delay: 4s; }
 .wave3 { animation-delay: 8s; }
@@ -39,7 +38,7 @@ body, html {
   100% { transform: translateX(0) translateY(0) scaleY(1); }
 }
 
-/* Optional floating bubble overlay for extra depth */
+/* Optional floating bubble overlay */
 body::after {
   content: "";
   position: fixed;
@@ -52,7 +51,6 @@ body::after {
   animation: floatBubbles 25s linear infinite;
   z-index: -1;
 }
-
 @keyframes floatBubbles {
   0% { transform: translate(0,0); }
   50% { transform: translate(20px,20px); }
@@ -82,7 +80,6 @@ nav {
   transition: transform 0.3s ease;
   z-index: 90;
 }
-
 nav.show { transform: translateX(0); }
 
 nav h2 { font-size: 1.5rem; margin-bottom: 2rem; text-align: center; }
@@ -98,48 +95,24 @@ nav a {
   gap: 0.5rem;
   transition: 0.3s;
 }
-
 nav a:hover { background: rgba(255,255,255,0.2); transform: translateX(5px); }
 
 /* Main Content */
 main {
-  padding: 4rem 2rem 2rem 2rem;
+  padding: 5rem 2rem 2rem 2rem;
   max-width: 900px;
   margin: 0 auto;
   position: relative;
   z-index: 1;
 }
 
-section {
-  margin-bottom: 3rem;
-  background: rgba(0,0,0,0.2);
-  padding: 1rem;
-  border-radius: 12px;
-}
-
 h1, h2 {
-  text-shadow: 1px 1px 4px rgba(0,0,0,0.5);
   text-align: center;
+  margin-bottom: 1.5rem;
+  text-shadow: 1px 1px 4px rgba(0,0,0,0.5);
 }
 
-/* Links & Referral Cards */
-.links a {
-  display: block;
-  margin: 0.5rem 0;
-  padding: 0.7rem 1rem;
-  border: 2px solid #00ffea;
-  border-radius: 8px;
-  color: #00ffea;
-  text-decoration: none;
-  font-weight: bold;
-  transition: 0.3s;
-}
-
-.links a:hover {
-  background: #00ffea;
-  color: #0072ce;
-}
-
+/* Cards */
 .referral-container, .social-container {
   display: flex;
   flex-direction: column;
@@ -176,7 +149,6 @@ h1, h2 {
   cursor: pointer;
   transition: all 0.3s ease;
 }
-
 .referral-card button:hover {
   background: linear-gradient(145deg, #0072ce, #00bfff);
   box-shadow: 0 0 15px #00ffea, 0 0 30px #00bfff;
@@ -189,19 +161,9 @@ h1, h2 {
   color: #00ffea;
   transition: transform 0.3s;
 }
-
-.social-icons a:hover {
-  color: #fff;
-  transform: rotate(15deg) scale(1.2);
-}
+.social-icons a:hover { color: #fff; transform: rotate(15deg) scale(1.2); }
 
 /* Responsive Menu */
 @media (max-width: 768px) {
   nav { width: 70%; }
-}
-
-/* Ensure main content is above background */
-main, nav, header, footer {
-  position: relative;
-  z-index: 1;
 }
