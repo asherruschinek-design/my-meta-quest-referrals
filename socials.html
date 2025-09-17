@@ -1,152 +1,103 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>My Socials</title>
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
-<link rel="stylesheet" href="style.css">
-<style>
-  body, html {
-    margin: 0;
-    padding: 0;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    background: #0072ce; /* Meta Quest blue */
-    color: #fff;
-  }
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>My Socials</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="https://kit.fontawesome.com/yourkit.js" crossorigin="anonymous"></script>
+  <style>
+    /* Social links styling */
+    .socials {
+      list-style: none;
+      padding: 0;
+      margin-top: 1rem;
+    }
 
-  .hamburger {
-    position: fixed;
-    top: 15px;
-    left: 15px;
-    font-size: 2rem;
-    cursor: pointer;
-    z-index: 100;
-  }
+    .socials li {
+      margin: 1rem 0;
+    }
 
-  nav {
-    width: 220px;
-    background: rgba(0,0,0,0.4);
-    position: fixed;
-    height: 100vh;
-    padding: 2rem 1rem;
-    display: flex;
-    flex-direction: column;
-    transform: translateX(-100%);
-    transition: transform 0.3s ease;
-    z-index: 90;
-  }
+    .socials a {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      font-size: 1.2rem;
+      color: #00ffea;
+      text-decoration: none;
+      padding: 0.8rem 1rem;
+      border: 2px solid #00ffea;
+      border-radius: 10px;
+      transition: all 0.3s ease;
+      background: rgba(0,0,0,0.2);
+    }
 
-  nav.show { transform: translateX(0); }
-
-  nav h2 { font-size: 1.5rem; margin-bottom: 2rem; text-align: center; }
-
-  nav a {
-    color: #00ffea;
-    text-decoration: none;
-    margin: 0.5rem 0;
-    padding: 0.5rem;
-    border-radius: 6px;
-    display: flex;
-    align-items: center;
-    gap: 0.5rem;
-    transition: 0.3s;
-  }
-
-  nav a:hover { background: rgba(255,255,255,0.2); transform: translateX(5px); }
-
-  main { padding: 4rem 2rem 2rem 2rem; max-width: 900px; margin: 0 auto; }
-
-  h1 { text-shadow: 1px 1px 4px rgba(0,0,0,0.5); margin-bottom: 2rem; text-align: center; }
-
-  .social-container {
-    display: flex;
-    flex-direction: column;
-    gap: 1rem;
-    max-width: 500px;
-    margin: 0 auto;
-  }
-
-  .social-card {
-    display: flex;
-    align-items: center;
-    gap: 1rem;
-    background: rgba(0,0,0,0.3);
-    padding: 1rem 1.5rem;
-    border-radius: 10px;
-    transition: transform 0.3s, background 0.3s;
-    text-decoration: none;
-    color: #00ffea;
-    font-size: 1.2rem;
-  }
-
-  .social-card:hover {
-    background: rgba(0,0,0,0.5);
-    transform: translateY(-5px);
-    color: #fff;
-  }
-
-  .social-card i {
-    font-size: 2rem;
-  }
-
-  body::before {
-    content: "";
-    position: fixed;
-    top: -50%;
-    left: -50%;
-    width: 200%;
-    height: 200%;
-    background: linear-gradient(120deg, #0072ce, #00bfff, #1e5ed1);
-    animation: wave 20s linear infinite;
-    z-index: -1;
-  }
-
-  @keyframes wave {
-    0% { transform: rotate(0deg); }
-    50% { transform: rotate(3deg); }
-    100% { transform: rotate(0deg); }
-  }
-</style>
+    .socials a:hover {
+      background: #00ffea;
+      color: #001f3f;
+      transform: scale(1.05);
+    }
+  </style>
 </head>
 <body>
+  <!-- Hamburger Menu -->
+  <div class="hamburger">&#9776;</div>
 
-<i class="fas fa-bars hamburger" id="hamburger"></i>
+  <!-- Sidebar Navigation -->
+  <nav>
+    <h2>Menu</h2>
+    <a href="index.html"><i class="fa-solid fa-house"></i> Home</a>
+    <a href="gains.html"><i class="fa-solid fa-hand-holding-dollar"></i> What We Gain</a>
+    <a href="socials.html" class="active"><i class="fa-solid fa-user-group"></i> My Socials</a>
+    <a href="contact.html"><i class="fa-solid fa-envelope"></i> Contact</a>
+  </nav>
 
-<nav id="sidebar">
-  <h2>Menu</h2>
-  <a href="index.html"><i class="fa-solid fa-house"></i>Home</a>
-  <a href="gains.html"><i class="fa-solid fa-hand-holding-dollar"></i>What We Gain</a>
-  <a href="redeem.html"><i class="fa-solid fa-gift"></i>How to Redeem</a>
-<a href="socials.html"><i class="fa-solid fa-user"></i>My Socials</a>  
-  <a href="links.html"><i class="fa-solid fa-link"></i>Referral Links</a>
-</nav>
-
-<main>
-  <h1>My Socials</h1>
-  <div class="social-container">
-    <a href="https://www.reddit.com/user/Delicious_Exit_8495/" target="_blank" class="social-card">
-      <i class="fab fa-reddit"></i> Reddit: Delicious_Exit_8495
-    </a>
-    <a href="mailto:asherruschinek@gmail.com" target="_blank" class="social-card">
-      <i class="fa-solid fa-envelope"></i> Gmail: asherruschinek@gmail.com
-    </a>
-    <a href="https://github.com/asherruschinek-design" target="_blank" class="social-card">
-      <i class="fab fa-github"></i> GitHub: asherruschinek-design
-    </a>
-    <a href="https://horizon.meta.com/profile/513575818501618/?hwsh=u13BVsZYj1" target="_blank" class="social-card">
-      <i class="fa-solid fa-vr-cardboard"></i> Meta: Ash Ruscho
-    </a>
+  <!-- Animated Background -->
+  <div class="animated-background">
+    <svg viewBox="0 0 1440 800" preserveAspectRatio="none">
+      <path class="wave wave1" d="M0,400 C480,300 960,500 1440,400 L1440,800 L0,800 Z" fill="rgba(0,179,255,0.3)"/>
+      <path class="wave wave2" d="M0,400 C480,500 960,300 1440,400 L1440,800 L0,800 Z" fill="rgba(0,255,234,0.2)"/>
+      <path class="wave wave3" d="M0,400 C480,350 960,450 1440,400 L1440,800 L0,800 Z" fill="rgba(0,179,255,0.1)"/>
+    </svg>
   </div>
-</main>
 
-<script>
-  const hamburger = document.getElementById('hamburger');
-  const sidebar = document.getElementById('sidebar');
-  hamburger.addEventListener('click', () => {
-    sidebar.classList.toggle('show');
-  });
-</script>
+  <!-- Main Content -->
+  <main>
+    <section>
+      <h1>My Social Links</h1>
+      <p>Connect with me on these platforms:</p>
+      <ul class="socials">
+        <li>
+          <a href="https://www.reddit.com/user/Delicious_Exit_8495/" target="_blank">
+            <i class="fa-brands fa-reddit"></i> Reddit: Delicious_Exit_8495
+          </a>
+        </li>
+        <li>
+          <a href="mailto:asherruschinek@gmail.com">
+            <i class="fa-solid fa-envelope"></i> Gmail: asherruschinek@gmail.com
+          </a>
+        </li>
+        <li>
+          <a href="https://github.com/asherruschinek-design" target="_blank">
+            <i class="fa-brands fa-github"></i> GitHub: asherruschinek-design
+          </a>
+        </li>
+        <li>
+          <a href="https://horizon.meta.com/profile/513575818501618/?hwsh=u13BVsZYj1" target="_blank">
+            <i class="fa-brands fa-meta"></i> Meta Horizon Profile
+          </a>
+        </li>
+      </ul>
+    </section>
+  </main>
 
+  <!-- Hamburger Script -->
+  <script>
+    const hamburger = document.querySelector('.hamburger');
+    const nav = document.querySelector('nav');
+    hamburger.addEventListener('click', () => {
+      nav.classList.toggle('show');
+    });
+  </script>
 </body>
 </html>
