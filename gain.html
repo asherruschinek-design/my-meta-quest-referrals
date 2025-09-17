@@ -5,8 +5,66 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Gains</title>
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
-<link rel="stylesheet" href="style.css">
 <style>
+  /* Basic Reset & Body */
+  body, html {
+    margin: 0;
+    padding: 0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: #0072ce; /* Meta Quest blue */
+    color: #fff;
+  }
+
+  /* Hamburger */
+  .hamburger {
+    position: fixed;
+    top: 15px;
+    left: 15px;
+    font-size: 2rem;
+    cursor: pointer;
+    z-index: 100;
+  }
+
+  /* Sidebar */
+  nav {
+    width: 220px;
+    background: rgba(0,0,0,0.4);
+    position: fixed;
+    height: 100vh;
+    padding: 2rem 1rem;
+    display: flex;
+    flex-direction: column;
+    transform: translateX(-100%);
+    transition: transform 0.3s ease;
+    z-index: 90;
+  }
+
+  nav.show { transform: translateX(0); }
+
+  nav h2 { font-size: 1.5rem; margin-bottom: 2rem; text-align: center; }
+
+  nav a {
+    color: #00ffea;
+    text-decoration: none;
+    margin: 0.5rem 0;
+    padding: 0.5rem;
+    border-radius: 6px;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    transition: 0.3s;
+  }
+
+  nav a:hover { background: rgba(255,255,255,0.2); transform: translateX(5px); }
+
+  /* Main content */
+  main { padding: 4rem 2rem 2rem 2rem; max-width: 900px; margin: 0 auto; }
+
+  section { margin-bottom: 3rem; background: rgba(0,0,0,0.2); padding: 1rem; border-radius: 12px; }
+
+  h1, h2 { text-shadow: 1px 1px 4px rgba(0,0,0,0.5); }
+
+  /* Gains cards */
   .gains-container {
     display: flex;
     flex-wrap: wrap;
@@ -36,13 +94,32 @@
     color: #00ffea;
   }
 
-  .gain-card p {
-    font-size: 1.2rem;
-    line-height: 1.5;
+  .gain-card p { font-size: 1.2rem; line-height: 1.5; }
+
+  /* Wavy background animation */
+  body::before {
+    content: "";
+    position: fixed;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: linear-gradient(120deg, #0072ce, #00bfff, #1e5ed1);
+    animation: wave 20s linear infinite;
+    z-index: -1;
   }
+
+  @keyframes wave {
+    0% { transform: rotate(0deg); }
+    50% { transform: rotate(3deg); }
+    100% { transform: rotate(0deg); }
+  }
+
+  @media (max-width: 768px) { nav { width: 70%; } }
 </style>
 </head>
 <body>
+
 <i class="fas fa-bars hamburger" id="hamburger"></i>
 
 <nav id="sidebar">
@@ -70,6 +147,13 @@
   </section>
 </main>
 
-<script src="script.js"></script>
+<script>
+  const hamburger = document.getElementById('hamburger');
+  const sidebar = document.getElementById('sidebar');
+  hamburger.addEventListener('click', () => {
+    sidebar.classList.toggle('show');
+  });
+</script>
+
 </body>
 </html>
