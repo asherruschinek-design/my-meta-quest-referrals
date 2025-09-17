@@ -173,3 +173,9 @@ h1, h2 {
   color: #001f3f;
   transform: scale(1.05);
 }
+/* Highlight the active menu item */
+nav a.active {
+  background: #00ffea;
+  color: #001f3f;
+  transform: scale(1.05);
+}
