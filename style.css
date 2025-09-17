@@ -145,3 +145,31 @@ h1, h2 {
 @media (max-width: 768px) {
   nav { width: 70%; }
 }
+.socials {
+  list-style: none;
+  padding: 0;
+}
+
+.socials li {
+  margin: 1rem 0;
+}
+
+.socials a {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  font-size: 1.2rem;
+  color: #00ffea;
+  text-decoration: none;
+  padding: 0.8rem 1rem;
+  border: 2px solid #00ffea;
+  border-radius: 10px;
+  transition: all 0.3s ease;
+  background: rgba(0,0,0,0.2);
+}
+
+.socials a:hover {
+  background: #00ffea;
+  color: #001f3f;
+  transform: scale(1.05);
+}
